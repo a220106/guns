@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>com.stylefeng.guns</groupId>
-    <artifactId>guns-geteway</artifactId>
+    <artifactId>guns-gateway</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>guns-geteway</name>
+    <name>guns-gateway</name>
     <description>网关</description>
 
     <parent>
