@@ -28,7 +28,7 @@ public class UserController {
         }
         boolean isSuccess = userAPI.register(userModel);
         if (isSuccess){
-            return  ResponseVO.sucess("注册成功");
+            return  ResponseVO.success("注册成功");
         }else {
             return ResponseVO.serviceFail("注册失败");
         }
@@ -38,16 +38,16 @@ public class UserController {
         if (userName!=null&&userName.trim().length()>=0){
             boolean notExists = userAPI.checkUsername(userName);
             if (notExists)
-                return ResponseVO.sucess("用户名不存在");
+                return ResponseVO.success("用户名不存在");
             else
-                return ResponseVO.sucess("用户名已存在");
+                return ResponseVO.success("用户名已存在");
         }else
             return ResponseVO.serviceFail("用户名不能为空");
 
     }
     @RequestMapping(value = "logout",method = RequestMethod.GET)
     public ResponseVO logout() {
-        return ResponseVO.sucess("用户名退出成功");
+        return ResponseVO.success("用户名退出成功");
     }
     @RequestMapping(value = "getUserInfo",method = RequestMethod.GET)
     public ResponseVO getUserInfo() {
@@ -56,12 +56,12 @@ public class UserController {
             int uuid = Integer.valueOf(userId);
             UserInfoModel userInfoModel = userAPI.getUserInfo(uuid);
             if (userInfoModel!=null){
-                return ResponseVO.sucess(userInfoModel);
+                return ResponseVO.success(userInfoModel);
             }else {
                 return ResponseVO.serviceFail("用户查询失败");
             }
         }
-        return ResponseVO.sucess("用户名未登录");
+        return ResponseVO.success("用户名未登录");
     }
     @RequestMapping(value = "updateUserInfo",method = RequestMethod.POST)
     public ResponseVO updateUserInfo(UserInfoModel userInfoModel) {
@@ -72,11 +72,11 @@ public class UserController {
                 return ResponseVO.serviceFail("业务异常");
             UserInfoModel userInfo = userAPI.updateUserInfo(userInfoModel);
             if (userInfoModel!=null){
-                return ResponseVO.sucess(userInfo);
+                return ResponseVO.success(userInfo);
             }else {
                 return ResponseVO.serviceFail("修改失败");
             }
         }
-        return ResponseVO.sucess("用户名未登录");
+        return ResponseVO.success("用户名未登录");
     }
 }
