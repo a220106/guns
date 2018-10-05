@@ -24,5 +24,7 @@ public interface CinemaServiceApi {
     FilmInfoVO getFilmInfoByFieldId(int fieldId);
 
 
+    OrderQueryVO getOrderNeeds(int fieldId);
+
 
 }

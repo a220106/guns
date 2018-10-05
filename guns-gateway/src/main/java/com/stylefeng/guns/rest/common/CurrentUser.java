@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CurrentUser {
 
-    private static final  ThreadLocal<String> threadLocal = new ThreadLocal<>();
+    private static final  InheritableThreadLocal <String> threadLocal = new InheritableThreadLocal<>();
 
     public static String getCurrentUser(){
         return threadLocal.get();
