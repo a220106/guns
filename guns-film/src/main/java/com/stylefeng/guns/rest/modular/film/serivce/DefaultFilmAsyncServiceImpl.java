@@ -16,10 +16,8 @@ import java.util.List;
 @Component
 @Service(interfaceClass = FilmAsyncServiceApi.class)
 public class DefaultFilmAsyncServiceImpl implements FilmAsyncServiceApi {
-
     @Autowired
     MoocFilmInfoTMapper moocFilmInfoTMapper;
-
     @Autowired
     MoocActorTMapper moocActorTMapper;
 
